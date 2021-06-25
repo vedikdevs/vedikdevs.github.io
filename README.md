@@ -1,1 +1,0 @@
-# vedik devs
