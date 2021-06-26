@@ -1,6 +1,7 @@
 import './style.css'
 import * as Three from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 const scene = new Three.Scene()
 const camera = new Three.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000)
 const renderer = new Three.WebGLRenderer({
@@ -11,10 +12,17 @@ renderer.setPixelRatio(window.devicePixelRatio)
 renderer.setSize(window.innerWidth, window.innerHeight)
 camera.position.setZ(30)
 
-const geometry = new Three.TorusGeometry(10, 3, 30, 30)
-const material = new Three.MeshStandardMaterial({ color: 0xFF0000 })
-const torus = new Three.Mesh(geometry, material)
-scene.add(torus)
+const loader = new GLTFLoader()
+loader.load('./sq.glb', (glb)=>{
+  scene.add(glb.scene)
+}, undefined, (err)=>{
+  console.log(err)
+})
+
+// const geometry = new Three.TorusGeometry(10, 3, 30, 30)
+// const material = new Three.MeshStandardMaterial({ color: 0xFF0000 })
+// const torus = new Three.Mesh(geometry, material)
+// scene.add(torus)
 const pointLight = new Three.PointLight(0xffffff, 1)
 const ambientLight = new Three.AmbientLight(0xffffff, 0.3)
 pointLight.position.set(5, 5, 5)
@@ -44,9 +52,9 @@ scene.background = spaceTexture;
 
 function render() {
   renderer.render(scene, camera)
-  torus.rotateX(0.01)
-  torus.rotateY(0.01)
-  torus.rotateZ(0.01)
+  // torus.rotateX(0.01)
+  // torus.rotateY(0.01) 
+  // torus.rotateZ(0.01)
   controls.update()
   requestAnimationFrame(render)
 }
