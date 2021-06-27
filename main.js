@@ -1,5 +1,7 @@
 import './style.css'
-
+import './grid.css'
+import './card.css'
+import './members.css'
 /** @type {HTMLButtonElement */
 var menu = document.getElementById("menu-button")
 var mode = document.getElementById("mode-button")

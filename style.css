@@ -8,12 +8,18 @@ canvas{
   /* z-index: 0; */
 }
 
+.card{
+  color: white;
+}
+
 :root {
   --color-1: #FFC300;
   --color-2: #FF3006;
   --color-2-dark: #df2500;
   --color-dark: rgb(17, 17, 17);
 }
+
+
 
 *, html, body {
   font-family: 'Ubuntu', sans-serif;
@@ -27,6 +33,25 @@ body{
   background-color: var(--color-dark);
 }
 
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: red; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #b30000; 
+}
 *::-webkit-scrollbar-thumb {
   background-color: black;
 }
@@ -35,6 +60,7 @@ body{
   /* background: rgb(236, 236, 236); */
   padding: 1rem 1rem;
   position: fixed;
+  z-index: 1;
   right: 0;
 }
 
@@ -59,7 +85,7 @@ body{
 }
 
 .nav-icon-2 {
-  margin-right: 0px;
+  margin-right: 10px;
 }
 
 .nav-icon:disabled {
@@ -69,11 +95,12 @@ body{
 
 
 .close-modal {
-  position: absolute;
+  position: fixed;
   height: 100%;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.425);
   visibility: hidden;
+  z-index: 1;
 }
 
 @keyframes list-come {
@@ -123,7 +150,7 @@ body{
 }
 
 .list-visible {
-  z-index: 0;
+  z-index: 2;
   position: fixed;
   right: 0;
   height: 100%;
@@ -133,7 +160,6 @@ body{
   border-bottom-left-radius: 40px;
   visibility: visible;
   animation: list-come 0.5s;
-  z-index: 1;
   animation-timing-function: linear;
   box-shadow: -10px 0px 20px black;
   /* background-image: url("./1.png"); */
@@ -197,17 +223,31 @@ body{
   font-size: 4rem;
 }
 
+#heading1{
+  color: var(--color-1);
+  font-family: 'Staatliches', cursive;
+  font-size: 3rem;
+  text-align: center;
+  font-weight: 900;
+}
+
 #heading2{
   color: var(--color-2);
   font-family: 'Staatliches', cursive;
   font-size: 3rem;
 }
 
+.content{
+  color: rgb(202, 202, 202);
+  font-size: 1.4rem;
+  padding:10px 0px ;
+}
+
 @media (max-width: 786px) {
   .container {
     position: relative;
     margin-left: 1rem;
-    margin-top: 3rem;
+    margin-top: 1rem;
     color: white;
   }
   

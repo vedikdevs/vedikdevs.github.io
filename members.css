@@ -1,0 +1,39 @@
+:root {
+    --dark: rgb(12, 12, 12);
+    --light: rgb(219, 219, 219);
+}
+
+.members {
+    padding: 10px 20px;
+}
+
+.member {
+    margin: 0px 10px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    background: var(--dark);
+    color: var(--light);
+    min-height: 300px;
+    text-align: center;
+    padding: 8px 8px;
+    box-shadow: 0px 10px 20px rgb(255, 197, 6);
+    transition: 0.3s;
+}
+
+.member:hover{
+    transform: scale(1.05);
+    box-shadow: 0px 15px 50px rgb(231, 27, 0);
+}
+
+.member-image {
+    min-height: 240px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.member-image img{
+    border-radius: 50%;
+    height: 200px;
+}
