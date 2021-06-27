@@ -1,21 +1,30 @@
-/* canvas{
-  position: fixed;
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+canvas{
+  display: block;
+  position: absolute;
   top: 0;
   left: 0;
-} */
+  /* z-index: 0; */
+}
 
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 :root {
   --color-1: #FFC300;
   --color-2: #FF3006;
   --color-2-dark: #df2500;
-  --color-dark: rgb(70, 70, 70);
+  --color-dark: rgb(17, 17, 17);
 }
 
-* {
+*, html, body {
   font-family: 'Ubuntu', sans-serif;
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
+  user-select: none;
+}
+
+body{
+  background-color: var(--color-dark);
 }
 
 *::-webkit-scrollbar-thumb {
@@ -24,34 +33,37 @@
 
 .navbar {
   /* background: rgb(236, 236, 236); */
-  position: relative;
+  padding: 1rem 1rem;
+  position: fixed;
+  right: 0;
 }
 
 .nav-icon {
-  right: 0;
-  margin: 30px;
+  /* right: 0; */
+  margin-right:10px ;
   padding: 10px;
   border-radius: 5px;
   color: var(--color-1);
   background-color: var(--color-dark);
   border: none;
   font-size: 2rem;
-  position: absolute;
+  /* position: absolute; */
+  float: right;
   display: flex;
   transition: 0.3s;
 }
 
 .nav-icon:hover {
   color: rgb(228, 228, 228);
-  background-color: rgb(70, 70, 70);
+  /* background-color: rgb(70, 70, 70); */
 }
 
 .nav-icon-2 {
-  margin-right: 90px;
+  margin-right: 0px;
 }
 
 .nav-icon:disabled {
-  background-color: rgb(80, 80, 80);
+  /* background-color: rgb(80, 80, 80); */
   color: rgb(247, 247, 247);
 }
 
@@ -97,20 +109,22 @@
 }
 
 .nav-list {
-  position: absolute;
-  right: 0;
+  position: fixed;
+  top: 0;
+  right: 0; 
   height: 100%;
   width: 300px;
   background: var(--color-dark);
   opacity: 0;
   visibility: hidden;
-  animation: list-go 1s ease-out;
+  animation: list-go 0.5s linear;
   animation-direction: reverse;
+  z-index: 1;
 }
 
 .list-visible {
   z-index: 0;
-  position: absolute;
+  position: fixed;
   right: 0;
   height: 100%;
   width: 300px;
@@ -118,8 +132,10 @@
   border-top-left-radius: 40px;
   border-bottom-left-radius: 40px;
   visibility: visible;
-  animation: list-come 1s;
-  animation-timing-function: ease-in;
+  animation: list-come 0.5s;
+  z-index: 1;
+  animation-timing-function: linear;
+  box-shadow: -10px 0px 20px black;
   /* background-image: url("./1.png"); */
   /* background-size: cover; */
 }
@@ -138,6 +154,7 @@
 .menu-link {
   text-decoration: none;
   color: var(--color-1);
+  font-weight: bold;
   font-size: 3rem;
   /* background: white; */
   margin-top: 20px;
@@ -162,14 +179,61 @@
   color: var(--color-2);
 }
 
-/* .nav-icon:after, 
-.nav-icon:before, 
-.nav-icon div {
-  background-color: rgb(255, 47, 10);
-  border-radius: 3px;
-  content: '';
-  display: block;
-  height: 5px;
-  margin: 7px 0;
-  transition: all .2s ease-in-out;
-} */
+.nothing{
+  visibility: hidden;
+  position: fixed;
+}
+
+
+.container {
+  position: relative;
+  margin-left: 3rem;
+  color: white;
+}
+
+#heading{
+  color: var(--color-1);
+  font-family: 'Staatliches', cursive;
+  font-size: 4rem;
+}
+
+#heading2{
+  color: var(--color-2);
+  font-family: 'Staatliches', cursive;
+  font-size: 3rem;
+}
+
+@media (max-width: 786px) {
+  .container {
+    position: relative;
+    margin-left: 1rem;
+    margin-top: 3rem;
+    color: white;
+  }
+  
+  #heading{
+    font-family: 'Staatliches', cursive;
+    font-size: 3rem;
+  }
+  
+  #heading2{
+    font-family: 'Staatliches', cursive;
+    font-size: 2rem;
+  }
+}
+
+.home{
+  font-size: 3rem;
+}
+
+   #particles-js{
+     width: 100%;
+     height: 100%;
+     position: absolute;
+     background-color: #121212;
+     background-image: url('');
+     background-size: cover;
+     background-position: 50% 50%;
+     background-repeat: no-repeat;
+   }
+   
