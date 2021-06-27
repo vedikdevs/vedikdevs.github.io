@@ -1,64 +1,60 @@
 import './style.css'
-import * as Three from 'three'
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
-const scene = new Three.Scene()
-const camera = new Three.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000)
-const renderer = new Three.WebGLRenderer({
-  canvas: document.getElementById("canvas")
-})
 
-renderer.setPixelRatio(window.devicePixelRatio)
-renderer.setSize(window.innerWidth, window.innerHeight)
-camera.position.setZ(30)
+/** @type {HTMLButtonElement */
+var menu = document.getElementById("menu-button")
+var mode = document.getElementById("mode-button")
+var navlist = document.getElementById("nav-list")
+var currentMode = "sunny";
 
-const loader = new GLTFLoader()
-loader.load('./sq.glb', (glb)=>{
-  scene.add(glb.scene)
-}, undefined, (err)=>{
-  console.log(err)
-})
-
-// const geometry = new Three.TorusGeometry(10, 3, 30, 30)
-// const material = new Three.MeshStandardMaterial({ color: 0xFF0000 })
-// const torus = new Three.Mesh(geometry, material)
-// scene.add(torus)
-const pointLight = new Three.PointLight(0xffffff, 1)
-const ambientLight = new Three.AmbientLight(0xffffff, 0.3)
-pointLight.position.set(5, 5, 5)
-const pointLightHelper = new Three.PointLightHelper(pointLight)
-const gridHelper = new Three.GridHelper(200, 20)
-scene.add(pointLight, ambientLight, pointLightHelper, gridHelper)
-const controls = new OrbitControls(camera, renderer.domElement)
-const range = 200;
-
-function addStar() {
-  const g = new Three.SphereGeometry(0.25, 10, 10)
-  const m = new Three.MeshStandardMaterial({ color: 0xFFFFFF })
-  const star = new Three.Mesh(g, m)
-  var x = Three.MathUtils.randFloatSpread(range)
-  var y = Three.MathUtils.randFloatSpread(range)
-  var z = Three.MathUtils.randFloatSpread(range)
-  star.position.set(x, y, z)
-  scene.add(star)
+mode.childNodes[1].name = currentMode;
+menu.onclick = () => {
+  navlist.className = "list-visible"
+  menu.disabled = true
 }
 
-Array(300).fill().forEach(()=>{
-  addStar()
-})
-
-const spaceTexture = new Three.TextureLoader().load('space.jpg')
-scene.background = spaceTexture;
-
-function render() {
-  renderer.render(scene, camera)
-  // torus.rotateX(0.01)
-  // torus.rotateY(0.01) 
-  // torus.rotateZ(0.01)
-  controls.update()
-  requestAnimationFrame(render)
+mode.onclick = () => {
+  currentMode =  currentMode === "sunny" ? "moon" : "sunny";
+  mode.childNodes[1].name = currentMode;
+  console.log("modechanged")
 }
+// import * as Three from 'three'
+// import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
+// import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+// import { Scene } from 'three';
+// const scene = new Three.Scene()
+// const camera = new Three.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000)
+// const renderer = new Three.WebGLRenderer({
+//   canvas: document.getElementById("canvas")
+// })
 
-render()
+// var controls = new OrbitControls(camera, renderer.domElement)
+
+// renderer.setPixelRatio(window.devicePixelRatio)
+// renderer.setSize(window.innerWidth, window.innerHeight)
+// camera.position.setZ(30)
+// scene.background = new Three.Color(0xffffff)
+
+// /** @type {Three.Mesh} */
+// const loader = new GLTFLoader()
+// function modelLoader(url) {
+//   return new Promise((resolve, reject) => {
+//     loader.load(url, data=> resolve(data.scene), null, reject);
+//   });
+// }
+// var vedikDevsObject = await modelLoader('sq.glb');
+// scene.add(vedikDevsObject)
+
+// const light = new Three.AmbientLight(0xffffff, 2)
+// // const helper = new Three.PointLightHelper(light, 1, 0x000000)
+// scene.add(light)
+
+// function render() {
+//   renderer.render(scene, camera)
+//   vedikDevsObject.rotateY(0.01)
+//   requestAnimationFrame(render)
+//   controls.update()
+// }
+
+// render()
 
 
