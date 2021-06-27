@@ -4,10 +4,27 @@ import './style.css'
 var menu = document.getElementById("menu-button")
 var mode = document.getElementById("mode-button")
 var navlist = document.getElementById("nav-list")
-var currentMode = "sunny";
+var currentMode = "moon";
+var closeModal = document.querySelector(".close-modal")
+var closeButton = document.querySelector(".close-button")
+
 
 mode.childNodes[1].name = currentMode;
+
+function closeNavbar(){
+  navlist.className = "nav-list";
+  menu.disabled = false;
+  closeModal.style.visibility = "hidden";
+}
+closeModal.onclick = () => {
+  closeNavbar();
+};
+closeButton.onclick = () => {
+  closeNavbar();
+}
+
 menu.onclick = () => {
+  closeModal.style.visibility = "visible";
   navlist.className = "list-visible"
   menu.disabled = true
 }
@@ -15,7 +32,7 @@ menu.onclick = () => {
 mode.onclick = () => {
   currentMode =  currentMode === "sunny" ? "moon" : "sunny";
   mode.childNodes[1].name = currentMode;
-  console.log("modechanged")
+  // console.log("modechanged")
 }
 // import * as Three from 'three'
 // import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
