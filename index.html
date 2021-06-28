@@ -10,20 +10,20 @@
 </head>
 
 <body>
+  <canvas id="canvas"></canvas>
   <div class="nothing" id="nav-list">
     <button class="close-button"><span>
         <ion-icon name="close"></ion-icon>
       </span></button>
     <ul class="menu-list">
       <li><a href="#home" class="menu-link">Home</a></li>
-      <li><a href="#members" class="menu-link">Members</a></li>
+      <li><a href="#members" class="menu-link">Developers</a></li>
       <li><a href="#projects" class="menu-link">Projects</a></li>
       <li><a href="#join" class="menu-link">Join Us</a></li>
       <li><a href="#contact" class="menu-link">Contact</a></li>
     </ul>
   </div>
   <div class="close-modal"></div>
-  <!-- <canvas id="canvas"></canvas> -->
   <nav class="navbar">
     <button class="nav-icon" id="menu-button">
       <ion-icon name="grid"></ion-icon>
@@ -35,12 +35,14 @@
   <br><br><br>
   <section id="home">
     <div class="container">
-      <h1 id="heading1">Home</h1>
+      <!-- <h1 id="heading1">Home</h1> -->
       <br>
-      <h1 id="heading"> &lt; Hello <span><img src="./vcf.png" alt="" style="height: 70px; width: auto;"></span> World!
+      <h1 id="heading"> &lt; Hello <span><img src="./vcf.png" alt=""
+            style="height: 70px; width: auto; visibility: hidden;"></span> Developers!
         /&gt</h1>
       <h1 id="heading2">Welcome to The Home of Vedik Devs</h1>
-      <p class="content">VCF is a small team of memebers who are new to the Computer Science world and wanna learn new
+      <p class="content">VedikDevs is a small team of memebers who are new to the Computer Science world and wanna learn
+        new
         skills like
         gamedevelpment, web development, apps, animation, graphic designing and all other stuff. We are currently
         looking for more and more developers to join us and work on new ideas and project for improving their skills in
@@ -53,9 +55,12 @@
   <br><br>
   <hr>
   <br><br>
-  <h1 id="heading1">Members</h1>
-  <br>
   <section id="members">
+    <h1 id="heading1">developers</h1>
+    <h4 class="subhead center">
+      We have a team of Devs who are experts in their fields of work
+    </h4>
+    <br>
     <div class="columns is-multiline is-centered members">
       <div class="column is-5">
         <div class="member">
@@ -64,12 +69,14 @@
               <figure class="member-image">
                 <img src="./images/HimanshuJangid.jpg" alt="">
               </figure>
+              <a href="gttps://himanshurajora.github.io" class="portfolio">Portfolio</a>
             </div>
             <div class="column">
               <h1>Himanshu Jangid</h1>
-              <p class="content">
+              <p class="content member-content">
                 Software Developer, Game Developer, Graphics Designer, Both Front And Back End Web Developer. Skills: C,
-                C++, C#, Python, JavaScript, Java, PHP, HTML, CSS, MySQL, Photoshop, Gravit, Inkscape, Blender, Unity, Angular, React, Firebase, Git.
+                C++, C#, Python, JavaScript, Java, PHP, HTML, CSS, MySQL, Photoshop, Gravit, Inkscape, Blender, Unity,
+                Angular, React, Firebase, Git.
               </p>
             </div>
           </div>
@@ -88,9 +95,10 @@
             </div>
             <div class="column">
               <h1>Himanshu Jangid</h1>
-              <p class="content">
+              <p class="content member-content">
                 Software Developer, Game Developer, Graphics Designer, Both Front And Back End Web Developer. Skills: C,
-                C++, C#, Python, JavaScript, Java, PHP, HTML, CSS, MySQL, Photoshop, Gravit, Inkscape, Blender, Unity, Angular, React, Firebase, Git.
+                C++, C#, Python, JavaScript, Java, PHP, HTML, CSS, MySQL, Photoshop, Gravit, Inkscape, Blender, Unity,
+                Angular, React, Firebase, Git.
               </p>
             </div>
           </div>
@@ -99,94 +107,112 @@
 
     </div>
   </section>
+  <br> <br>
+  <!-- <hr> -->
+  <br> <br>
+  <section id="projects">
+    <p id="heading1">
+      Projects
+    </p>
+    <h4 class="center subhead">VedikDevs are always on Projects and We don't Rest </h4>
+    <br><br>
+    <div class="container">
+      <div class="columns is-multiline is-centered">
+        <div class="column is-5 project">
+          <div class="columns is-multiline">
+            <div class="column is-12"><img src="vcf.png" style="height: 100px; margin: auto;" alt=""></div>
+            <div class="column is-12">
+              <h1>VCF project</h1>
+            </div>
+            <div class="column is-11 project-content">This is a web project and it is the first project that was created
+              by the vcf team
+              to create a alternative to wikipedia. View More...
+              We thought so because we wanted to create a way more better user friendly graphical interface than
+              wikipedia but unfortunately due to lack of experience and domain knowledge (of servers and databases), it
+              was a fail. But we learn from faliures and also the whole source code is not our, it is based on an
+              another open source project that we have forgotten what that was. We are not going to improve it alteast
+              for a few years. Download the source code and try if you can do so or just view it live and take a look.
+            </div>
+            <div class="column is-12"><a href="https://github.com/himanshurajora" class="git-btn">
+                <ion-icon name="logo-github"></ion-icon> Git
+              </a></div>
+          </div>
+        </div>
+
+        <div class="column is-5 project">
+          <div class="columns is-multiline">
+            <div class="column is-12"><img src="vcf.png" style="height: 100px; margin: auto;" alt=""></div>
+            <div class="column is-12">
+              <h1> project</h1>
+            </div>
+            <div class="column is-11 project-content">This is a web project and it is the first project that was created
+              by the vcf team
+              to create a alternative to wikipedia. View More...
+              We thought so because we wanted to create a way more better user friendly graphical interface than
+              wikipedia but unfortunately due to lack of experience and domain knowledge (of servers and databases), it
+              was a fail. But we learn from faliures and also the whole source code is not our, it is based on an
+              another open source project that we have forgotten what that was. We are not going to improve it alteast
+              for a few years. Download the source code and try if you can do so or just view it live and take a look.
+            </div>
+            <div class="column is-12"><a href="https://github.com/himanshurajora" class="git-btn">
+                <ion-icon name="logo-github"></ion-icon> Git
+              </a></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <br><br>
+  <!-- <hr> -->
+  <br><br>
+  <section id="join">
+    <p id="heading1">Join Us</p>
+    <p class="subhead center">Send Us a Request to Join</p>
+    <br>
+    <br>
+    <br>
+    <div class="center">
+      <a href="https://vcfjr.github.io" class="git-btn">Send a Join Request</a>
+    </div>
+  </section>
+  <br><br><br><br>
+  <!-- <hr> -->
+  <br><br>
+
+
+
+  <section id="contact">
+    <div class="container">
+      <div class="columns is-centered is-mobile center ">
+        <div class="column">
+          <a href="" class="big">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </a>
+        </div>
+        <div class="column">
+          <a href="" class="big">
+            <ion-icon name="logo-github"></ion-icon>
+          </a>
+        </div>
+        <div class="column">
+          <a href="" class="big">
+            <ion-icon name="logo-stackoverflow"></ion-icon>
+          </a>
+        </div>
+      </div>
+    </div>
+    <br><br>
+   <center class="last">
+      &nbsp;&nbsp; &nbsp;&nbsp &nbsp;&nbsp Vedik Devs <br>
+    Made By Vedik Devs || For Devs By Devs
+   </center>
+   <br><br><br><br>
+  </section>
+
+
+
   <script type="module" src="./main.js"></script>
-
-
-
-
-  <!-- <section id="members" class="card-list">
-    <article class="card">
-      <header class="card-header">
-        <p>Sep 11th 2020</p>
-        <h2>Never forget</h2>
-      </header>
-
-      <div class="card-author">
-        <a class="author-avatar" href="#">
-          <img src="avatar.png" />
-        </a>
-        <svg class="half-circle" viewBox="0 0 106 57">
-          <path d="M102 4c0 27.1-21.9 49-49 49S4 31.1 4 4"></path>
-        </svg>
-
-        <div class="author-name">
-          <div class="author-name-prefix">Author</div>
-          Jeff Delaney
-        </div>
-      </div>
-      <div class="tags">
-        <a href="#">html</a>
-        <a href="#">css</a>
-        <a href="#">web-dev</a>
-      </div>
-    </article>
-
-
-
-
-    <article class="card">
-      <header class="card-header">
-        <p>Sep 11th 2020</p>
-        <h2>Card Tricks are fun!</h2>
-      </header>
-
-      <div class="card-author">
-        <a class="author-avatar" href="#">
-          <img src="https://api.adorable.io/avatars/172/c.png" />
-        </a>
-        <svg class="half-circle" viewBox="0 0 106 57">
-          <path d="M102 4c0 27.1-21.9 49-49 49S4 31.1 4 4"></path>
-        </svg>
-
-        <div class="author-name">
-          <div class="author-name-prefix">Pirate</div>
-          Edward Teach
-        </div>
-      </div>
-      <div class="tags">
-        <a href="#">html</a>
-        <a href="#">css</a>
-      </div>
-    </article>
-
-
-
-
-    <article class="card">
-      <header class="card-header">
-        <p>Sep 11th 2020</p>
-        <h2>Card Tricks are fun!</h2>
-      </header>
-
-      <div class="card-author">
-        <a class="author-avatar" href="#">
-          <img src="https://api.adorable.io/avatars/172/d.png" />
-        </a>
-        <svg class="half-circle" viewBox="0 0 106 57">
-          <path d="M102 4c0 27.1-21.9 49-49 49S4 31.1 4 4"></path>
-        </svg>
-
-        <div class="author-name">
-          <div class="author-name-prefix">Pirate</div>
-          William Kidd
-        </div>
-      </div>
-      <div class="tags">
-        <a href="#">html</a>
-        <a href="#">css</a>
-      </div>
-    </article>
-  </section> -->
 </body>
 
 </html>
