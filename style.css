@@ -1,15 +1,41 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
-canvas{
-  display: block;
+canvas {
   position: absolute;
+  z-index: 0;
   top: 0;
   left: 0;
+  margin-top: 50px;
+  margin-left: 97px;
   /* z-index: 0; */
 }
 
-.card{
+@media (max-width:786px) {
+  canvas {
+    margin-top: 70px;
+    margin-left: 22px;
+  }
+}
+
+.card {
   color: white;
+}
+
+.portfolio {
+  text-decoration: none;
+  color: #f7f7f7;
+  padding: 10px 20px;
+  font-size: 18px;
+  border-radius: 10px;
+  background-color: rgb(243, 57, 0);
+}
+
+.portfolio:hover {
+  background-color: rgb(187, 44, 0);
+}
+
+#contact {
+  background-color: var(--color-dark-2);
 }
 
 :root {
@@ -17,9 +43,13 @@ canvas{
   --color-2: #FF3006;
   --color-2-dark: #df2500;
   --color-dark: rgb(17, 17, 17);
+  --color-light: rgb(202, 202, 202);
+  --color-light-2: rgb(247, 247, 247);
+  --color-dark-2: #333333;
+  --git-btn-fg: #222222;
+  --git-btn-bg: #f37500;
+  --git-btn-bg-hover: #be6601;
 }
-
-
 
 *, html, body {
   font-family: 'Ubuntu', sans-serif;
@@ -29,7 +59,7 @@ canvas{
   user-select: none;
 }
 
-body{
+body {
   background-color: var(--color-dark);
 }
 
@@ -38,20 +68,24 @@ body{
 }
 
 /* Track */
+
 ::-webkit-scrollbar-track {
   border-radius: 10px;
 }
- 
+
 /* Handle */
+
 ::-webkit-scrollbar-thumb {
-  background: red; 
+  background: red;
   border-radius: 10px;
 }
 
 /* Handle on hover */
+
 ::-webkit-scrollbar-thumb:hover {
-  background: #b30000; 
+  background: #b30000;
 }
+
 *::-webkit-scrollbar-thumb {
   background-color: black;
 }
@@ -66,7 +100,7 @@ body{
 
 .nav-icon {
   /* right: 0; */
-  margin-right:10px ;
+  margin-right: 10px;
   padding: 10px;
   border-radius: 5px;
   color: var(--color-1);
@@ -79,8 +113,33 @@ body{
   transition: 0.3s;
 }
 
+.center {
+  text-align: center;
+}
+
+.subhead {
+  color: var(--color-2);
+}
+
+.git-btn {
+  margin-right: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+  background-color: var(--git-btn-bg);
+  border: none;
+  font-size: 2rem;
+  transition: 0.3s;
+}
+
+.git-btn:hover {
+  /* color: var(--color-light-2);  */
+  background-color: var(--git-btn-bg-hover);
+}
+
 .nav-icon:hover {
   color: rgb(228, 228, 228);
+  background-color: var(--color-dark-2);
   /* background-color: rgb(70, 70, 70); */
 }
 
@@ -92,7 +151,6 @@ body{
   /* background-color: rgb(80, 80, 80); */
   color: rgb(247, 247, 247);
 }
-
 
 .close-modal {
   position: fixed;
@@ -118,7 +176,6 @@ body{
   }
 }
 
-
 @keyframes list-go {
   0% {
     /* opacity: 0; */
@@ -138,7 +195,7 @@ body{
 .nav-list {
   position: fixed;
   top: 0;
-  right: 0; 
+  right: 0;
   height: 100%;
   width: 300px;
   background: var(--color-dark);
@@ -205,11 +262,10 @@ body{
   color: var(--color-2);
 }
 
-.nothing{
+.nothing {
   visibility: hidden;
   position: fixed;
 }
-
 
 .container {
   position: relative;
@@ -217,13 +273,13 @@ body{
   color: white;
 }
 
-#heading{
+#heading {
   color: var(--color-1);
   font-family: 'Staatliches', cursive;
   font-size: 4rem;
 }
 
-#heading1{
+#heading1 {
   color: var(--color-1);
   font-family: 'Staatliches', cursive;
   font-size: 3rem;
@@ -231,16 +287,16 @@ body{
   font-weight: 900;
 }
 
-#heading2{
+#heading2 {
   color: var(--color-2);
   font-family: 'Staatliches', cursive;
   font-size: 3rem;
 }
 
-.content{
-  color: rgb(202, 202, 202);
+.content {
+  color: var(--color-light);
   font-size: 1.4rem;
-  padding:10px 0px ;
+  padding: 10px 10px;
 }
 
 @media (max-width: 786px) {
@@ -250,30 +306,84 @@ body{
     margin-top: 1rem;
     color: white;
   }
-  
-  #heading{
+  #heading {
     font-family: 'Staatliches', cursive;
     font-size: 3rem;
   }
-  
-  #heading2{
+  #heading2 {
     font-family: 'Staatliches', cursive;
     font-size: 2rem;
   }
 }
 
-.home{
+.home {
   font-size: 3rem;
 }
 
-   #particles-js{
-     width: 100%;
-     height: 100%;
-     position: absolute;
-     background-color: #121212;
-     background-image: url('');
-     background-size: cover;
-     background-position: 50% 50%;
-     background-repeat: no-repeat;
-   }
-   
+#particles-js {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: #121212;
+  background-image: url('');
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+/* Style the video: 100% width and height to cover the entire window */
+
+.lds-dual-ring {
+  margin: auto;
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+
+.model-a {
+  position: absolute;
+  z-index: 7;
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+}
+
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #ffc62b;
+  border-color: #ffc62b transparent #ffc62b transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.big, .big:visited, .big:active{
+  font-size: 2rem;
+  text-decoration: none;
+  color: var(--color-1);
+}
+
+.big:hover{
+  font-size: 2rem;
+  text-decoration: none;
+  color: var(--color-2);
+}
+
+.last{
+  font-size: 1rem;
+  color: var(--color-light);
+}
