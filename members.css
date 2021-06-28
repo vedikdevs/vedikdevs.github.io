@@ -1,14 +1,17 @@
 :root {
-    --dark: rgb(12, 12, 12);
-    --light: rgb(219, 219, 219);
+    --dark: rgb(36, 36, 36);
+    --light: rgb(240, 240, 240);
+    --yellow: rgb(255, 197, 6);
+    --red: rgb(231, 27, 0);
 }
 
 .members {
-    padding: 10px 20px;
+    padding: 10px 0px;
+    justify-content: space-around;
 }
 
 .member {
-    margin: 0px 10px;
+    margin: 20px 10px;
     border-radius: 20px;
     display: flex;
     align-items: center;
@@ -17,13 +20,41 @@
     min-height: 300px;
     text-align: center;
     padding: 8px 8px;
-    box-shadow: 0px 10px 20px rgb(255, 197, 6);
+    box-shadow: 0px 5px 9px var(--yellow);
     transition: 0.3s;
 }
 
 .member:hover{
-    transform: scale(1.05);
-    box-shadow: 0px 15px 50px rgb(231, 27, 0);
+    transform: scale(1.02);
+    box-shadow: 0px 7px 11px var(--red);
+}
+
+.project {
+    margin: 15px;
+    margin-top: 20px;
+    border-radius: 20px;
+    display: flex;
+    background: var(--dark);
+    color: var(--light);
+    min-height: 500px;
+    text-align: center;
+    padding: 15px 30px;
+    box-shadow: 0px 5px 9px var(--yellow);
+    transition: 0.3s;
+}
+
+.project:hover{
+    transform: scale(1.02);
+    box-shadow: 0px 7px 11px var(--red);
+}
+
+
+.project-content{
+    color: var(--light);
+}
+
+.member-content{
+    color: var(--light);
 }
 
 .member-image {
